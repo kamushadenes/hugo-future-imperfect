@@ -25,7 +25,11 @@
             <p>{{ .ReadingTime }} minute read</p>
         {{ end }}
         {{ if isset .Params "external" }}
-            <a href="{{ .Params.external }}"> External URL</a>
+        {{ if isset .Params "external2" }}
+            <p style="font-size:0.5em"><a href="{{ .Params.external }}"> Link 1 <i class="fa fa-link"></i></a> <a href="{{ .Params.external2 }}"> Link 2 <i class="fa fa-link"></i></a></p>
+        {{ else }}
+            <p style="font-size:0.5em"><a href="{{ .Params.external }}"> External URL <i class="fa fa-link"></i></a></p>
+        {{ end }}
         {{ end }}
         <!--<a href="#" class="author"><span class="name">Jane Doe</span><img src="images/avatar.jpg" alt="" /></a>-->
     </div>
