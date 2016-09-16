@@ -6,7 +6,7 @@
             {{ $pic := .Site.Params.intro.pic }}
             {{ with $pic.src }}
                 {{ if $pic.circle }}
-                    <img src="{{ . }}" class="intro-circle" width="{{ $pic.width }}" alt="{{ $pic.alt }}" />
+                    <center><img src="{{ . }}" class="intro-circle" width="{{ $pic.width }}" alt="{{ $pic.alt }}" /></center>
                 {{ else if $pic.imperfect }}
                     <a href="/" class="logo"><img src="{{ . }}" alt="{{ $pic.alt }}" /></a>
                 {{ else }}
@@ -15,11 +15,11 @@
             {{ end }}
             {{ with .Site.Params.intro }}
                 <header>
-                    <h2>{{ .header }}</h2>
-                    <p>{{ .paragraph | safeHTML }}</p>
+                    <center><h2>{{ .header }}</h2></center>
+                    <center><p>{{ .paragraph | safeHTML }}</p></center>
                 </header>
             {{ end }}
-            <ul class="icons">
+            <center><ul class="icons">
                 {{ if .RSSLink }}
                     <li><a href="{{ .RSSLink }}" type="application/rss+xml"
                         target="_blank" title="RSS" class="fa fa-rss"></a></li>
@@ -27,7 +27,7 @@
                 {{ if .Site.Params.socialAppearAtTop }}
                     {{ partial "social" . }}
                 {{ end }}
-            </ul>
+            </ul></center>
         </section>
 
     <!-- Posts List -->
