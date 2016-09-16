@@ -34,7 +34,7 @@
         <section id="recent-posts">
             <ul class="posts">
                 <header>
-                    <h3>Recent Posts</h3>
+                    <center><h3>Recent Posts</h3></center>
                 </header>
                 {{ if .Site.Params.orderByPublishDate }}
                     {{ $.Scratch.Set "recentPosts" .Site.Pages.ByPublishDate.Reverse }}
@@ -52,15 +52,15 @@
                     <li>
                         <article>
                             <header>
-                                <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+                                <center><h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3></center>
                                 {{ if .Site.Params.orderByPublishDate }}
                                     {{ $.Scratch.Set "dateType" .PublishDate }}
                                 {{ else }}
                                     {{ $.Scratch.Set "dateType" .Date }}
                                 {{ end }}
-                                <time class="published" datetime=
+                                <center><time class="published" datetime=
                                     '{{ ($.Scratch.Get "dateType").Format "2006-01-02" }}'>
-                                    {{ ($.Scratch.Get "dateType").Format "January 2, 2006" }}</time>
+                                    {{ ($.Scratch.Get "dateType").Format "January 2, 2006" }}</time></center>
                             </header>
                         </article>
                     </li>
@@ -89,7 +89,7 @@
         <section id="categories">
             <ul class="posts">
                 <header>
-                    <h3><a href="/categories/">Categories</a></h3>
+                    <center><h3><a href="/categories/">Categories</a></h3></center>
                 </header>
 
                 {{ if .Site.Params.categoriesByCount }}
@@ -115,12 +115,12 @@
     <!-- About -->
         {{ with .Site.Params.intro.about }}
         <section class="blurb">
-            <h2>About</h2>
-            <p>{{ . }}</p>
+            <center><h2>About</h2></center>
+            <center><p>{{ . }}</p></center>
 
-            <ul class="actions">
+            <center><ul class="actions">
                 <li><a href="/about/" class="button">Learn More</a></li>
-            </ul>
+            </ul></center>
         </section>
         {{ end }}
 
