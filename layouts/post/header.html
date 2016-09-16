@@ -24,7 +24,9 @@
         {{ if .Site.Params.includeReadingTime }}
             <p>{{ .ReadingTime }} minute read</p>
         {{ end }}
+        {{ if isset .Params "external" }}
             <a href="{{ .Params.external }}"> External URL</a>
+        {{ end }}
         <!--<a href="#" class="author"><span class="name">Jane Doe</span><img src="images/avatar.jpg" alt="" /></a>-->
     </div>
 </header>
