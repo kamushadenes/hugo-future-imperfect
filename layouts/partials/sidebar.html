@@ -18,7 +18,7 @@
                     <center><h2>{{ .header }}</h2></center>
                     <center><p>{{ .paragraph | safeHTML }}</p></center>
                 </header>
-            {{ end }}
+            {{ end }}P
             <center><ul class="icons">
                 {{ if .RSSLink }}
                     <li><a href="{{ .RSSLink }}" type="application/rss+xml"
@@ -68,7 +68,7 @@
 
                 {{ if ge (len (where .Site.Pages "Type" "post")) ($.Scratch.Get "postLimit") }}
                     <li>
-                        <ul class="actions">
+                        <center><ul class="actions">
                             <li><a href=
                             {{ with .Site.Params.viewMorePostLink }}
                                 {{ . }}
@@ -76,7 +76,7 @@
                                 "/post/"
                             {{ end }}
                             class="button">View more posts</a></li>
-                        </ul>
+                        </ul></center>
                     </li>
                 {{ end }}
             </ul>
